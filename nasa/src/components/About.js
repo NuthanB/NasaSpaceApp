@@ -20,7 +20,7 @@ export default function About() {
   }, []);
 
   return (
-    <div className="about-section">
+    <div id="about" className="about-section">
       <div className="left-section">
         <h3 className="heading">NASA Space Apps?</h3>
         <p className="t-italic">
