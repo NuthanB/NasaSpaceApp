@@ -12,7 +12,7 @@ function Contact() {
  }, []);
 
   return (
-    <div id="contact" className={`contact-section ${isVisible ? "fade-up" : ""}`}>
+    <section id="contact" className={`contact-section ${isVisible ? "fade-up" : ""}`}>
       <h2 className="sub-title">CONTACT</h2>
       <h1 className="heading">CONTACT US</h1>
 
@@ -21,14 +21,14 @@ function Contact() {
       <div className="row">
         <div className="left-section">
           <div className="container">
-            <img src="./pin.png" />
+            <img src="./pin.png" alt="map pin icon" />
             <div className="flexbox">
                 <h3>Location:</h3>
                 <p>Dayananda Sagar University, Harohalli</p>
             </div>
           </div>
           <div className="container">
-            <img src="./mail.png" />
+            <img src="./mail.png" alt="mail icon" />
             <div className="flexbox">
                 <h3>Email:</h3>
                 <p>dsu-harohalli@gmail.com</p>
@@ -46,7 +46,7 @@ function Contact() {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
