@@ -51,11 +51,12 @@ const Navbar = () => {
         behavior: "smooth",
       });
       setActiveLink(id);
+      isOpen ? toggleMenu() : setIsOpen(false) ;
     }
   };
 
   return (
-    <nav className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+    <section className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
           <img src={brandImgPath} alt="logo" />
@@ -118,7 +119,7 @@ const Navbar = () => {
               About
             </a>
           </li>
-          <li className="navbar-menu-item">
+          {/* <li className="navbar-menu-item">
             <a
               href="#home"
               className={`navbar-link ${
@@ -128,7 +129,7 @@ const Navbar = () => {
             >
               Gallery
             </a>
-          </li>
+          </li> */}
           <li className="navbar-menu-item">
             <a
               href="#contact"
@@ -148,7 +149,7 @@ const Navbar = () => {
           Winners
         </button>
       </div>
-    </nav>
+    </section>
   );
 };
 
