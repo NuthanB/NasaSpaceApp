@@ -41,7 +41,7 @@ export default function About() {
         </p>
       </div>
       <div className="right-section">
-        <img src="./about.jpg" alt="About NASA Space Apps" />
+        <img src="./about.jpeg" alt="About NASA Space Apps" />
       </div>
     </section>
   );

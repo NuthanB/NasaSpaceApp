@@ -5,7 +5,6 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("");
-  const [brandImgPath, setBrandImgPath] = useState("./logo-dark.png");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -13,23 +12,20 @@ const Navbar = () => {
 
   const handleScroll = () => {
     const offset = window.scrollY;
+    const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
     if (offset > 50) {
       setScrolled(true);
-      setBrandImgPath("./logo-dark.png");
     } else {
       setScrolled(false);
-      setBrandImgPath("./logo-dark.png");
     }
 
     const sections = document.querySelectorAll("section");
     let currentSection = "";
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
+      const sectionTop = section.offsetTop - navbarHeight;
       const sectionHeight = section.clientHeight;
-      if (
-        offset >= sectionTop - 60 &&
-        offset < sectionTop + sectionHeight - 60
-      ) {
+      if (offset >= sectionTop && offset < sectionTop + sectionHeight) {
         currentSection = section.getAttribute("id");
       }
     });
@@ -46,12 +42,13 @@ const Navbar = () => {
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
+      const navbarHeight = document.querySelector(".navbar").offsetHeight;
       window.scrollTo({
-        top: section.offsetTop,
+        top: section.offsetTop - navbarHeight,
         behavior: "smooth",
       });
       setActiveLink(id);
-      isOpen ? toggleMenu() : setIsOpen(false) ;
+      setIsOpen(false);
     }
   };
 
@@ -59,7 +56,8 @@ const Navbar = () => {
     <section className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src={brandImgPath} alt="logo" />
+          <img src="./icons/logo-dark.png" alt="logo" />
+          <img src="./icons/dsu.png" alt="logo" />
         </div>
         <div className={`navbar-toggle ${isOpen ? "open" : ""}`}>
           <button onClick={toggleMenu} className="navbar-toggle-button">
@@ -106,7 +104,7 @@ const Navbar = () => {
               onClick={() => scrollToSection("home")}
             >
               Home
-            </a>
+            </a>  
           </li>
           <li className="navbar-menu-item">
             <a
@@ -119,35 +117,29 @@ const Navbar = () => {
               About
             </a>
           </li>
-          {/* <li className="navbar-menu-item">
-            <a
-              href="#home"
-              className={`navbar-link ${
-                activeLink === "gallery" ? "t-orange" : ""
-              }`}
-              onClick={() => scrollToSection("home")}
-            >
-              Gallery
-            </a>
-          </li> */}
           <li className="navbar-menu-item">
             <a
-              href="#contact"
+              href="#organizers"
               className={`navbar-link ${
-                activeLink === "contact" ? "t-orange" : ""
+                activeLink === "organizers" ? "t-orange" : ""
               }`}
-              onClick={() => scrollToSection("contact")}
+              onClick={() => scrollToSection("organizers")}
+            >
+              Organizers
+            </a>
+          </li>
+          <li className="navbar-menu-item">
+            <a
+              href="#foot"
+              className={`navbar-link ${
+                activeLink === "foot" ? "t-orange" : ""
+              }`}
+              onClick={() => scrollToSection("foot")}
             >
               Contact
             </a>
           </li>
         </ul>
-        <button
-          className="btn btn-winners"
-          onClick={() => scrollToSection("winners")}
-        >
-          Winners
-        </button>
       </div>
     </section>
   );
