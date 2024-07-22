@@ -43,7 +43,7 @@ export default function About() {
   };
 
   return (
-    <section className="counts-section">
+    <div className="counts-section">
       <div className="right-section">
         <img src="./counts.jpg" alt="About NASA Space Apps" />
       </div>
@@ -85,6 +85,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

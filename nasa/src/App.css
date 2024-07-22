@@ -3,7 +3,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: Poppins, serif;
-  overflow-x: hidden;
 }
 
 .t-orange,
@@ -568,7 +567,7 @@ body {
   align-items: flex-start;
   justify-content: center;
   color: #fff;
-  padding: 2vh 2vw;
+  padding: 1vh 1vw;
 }
 
 .footer h2 {
@@ -590,11 +589,10 @@ body {
 .social-icon {
   padding: 0;
   background-color: #ffc44e;
-  margin-top: 1vh;
   margin-right: 1vw;
   outline: none;
-  max-width: 2vw;
-  height: 2vw;
+  max-width: 3vw;
+  height: 3vw;
   border: 1px solid #ffc44e;
   border-radius: 80%;
   border: none;
@@ -605,17 +603,19 @@ body {
   height: auto;
 }
 
+.footer > *:last-child {
+  text-align: center;
+}
+
 .footer p {
   margin: 1vh 0;
-  margin-right: 5vw;
-  text-align: center;
 }
 
 /* ----------- BACK TO TOP BUTTON ------------ */
 .back-to-top {
   position: fixed;
-  bottom: 1vw;
-  right: 1vw;
+  bottom: 40px;
+  right: 40px;
   z-index: 1000;
 }
 
@@ -630,7 +630,6 @@ body {
   transition: opacity 0.3s ease-in-out;
   opacity: 0.7;
   font-weight: bold;
-  margin: 0;
 }
 
 .back-to-top-button:hover {
@@ -651,13 +650,8 @@ body {
   .counts-section .left-section,
   .counts-section .right-section {
     width: 100%;
-    margin-inline: auto;
     padding: 0 20px;
     text-align: center;
-  }
-
-  .counts-section .grid-container .count-box p {
-    text-align: justify;
   }
 
   .about-section .right-section img,
@@ -727,7 +721,7 @@ body {
   }
 
   .card {
-    width: 100%;
+    width: 50vw;
   }
 
   .contact-section .row {
@@ -742,10 +736,6 @@ body {
 
 /* ========= MOBILE ========== */
 @media (max-width: 425px) {
-  .navbar {
-    padding: 10px 0;
-  }
-
   .navbar-menu {
     display: none;
   }
@@ -759,7 +749,7 @@ body {
   }
 
   .navbar-link {
-    padding: 0;
+    padding: 1rem;
     color: #fff;
   }
 
@@ -774,45 +764,9 @@ body {
 
   .hero-section {
     height: 50vh;
-    background-position: 50 50;
-    background-size: cover;
-  }
-
-  .hero-section h1,
-  .hero-section .typing .typing-text,
-  .typing-cursor {
-    font-size: 2rem;
-  }
-
-  .hero-section .hero-links {
-    flex-direction: column;
   }
 
   .about-section .right-section img {
     width: 100%;
-  }
-
-  .carousel-container {
-    margin: 3vh 0;
-  }
-
-  .carousel-card > img {
-    height: 50%;
-    width: auto;
-  }
-
-  .footer {
-    width: 100%;
-  }
-
-  .social-icon {
-    height: 2vh;
-    max-width: 4vw;
-  }
-
-  .social-icon img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 }

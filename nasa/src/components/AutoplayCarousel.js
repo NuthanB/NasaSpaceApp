@@ -20,7 +20,7 @@ function shuffle(array) {
 export default function AutoplayCarousel() {
   const logos = shuffle([...logoArray]);
   return (
-    <section className="carousel-container">
+    <div className="carousel-container">
       <div className="carousel-track">
         {logos.map((logo, _) => {
           return (
@@ -30,6 +30,6 @@ export default function AutoplayCarousel() {
           );
         })}
       </div>
-    </section>
+    </div>
   );
 }

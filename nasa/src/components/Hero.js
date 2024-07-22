@@ -3,7 +3,7 @@ import TypingAnim from './TypingAnim';
 
 function Hero() {
   return (
-    <section id="home" className="hero-section">
+    <div id="home" className="hero-section">
       <h1>Until next time,</h1>
       <div className='typing'>
         <h1>forever</h1>
@@ -15,7 +15,7 @@ function Hero() {
         <a className='t-orange' href="/">443 Teams</a>
         <a className='t-orange' href="/">58 Bootcamps</a>
       </div>
-    </section>
+    </div>
   );
 }
 
