@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-export default function About() {
+export default function Counts() {
   useEffect(() => {
     const countSection = document.querySelector(".counts-section");
 
@@ -12,6 +12,7 @@ export default function About() {
             countBoxes.forEach((box) => {
               animateCount(box);
             });
+            countSection.classList.add("animate");
             observer.unobserve(countSection);
           }
         });
@@ -25,7 +26,7 @@ export default function About() {
   const animateCount = (element) => {
     const finalCount = parseInt(element.innerText, 10);
     let currentCount = 0;
-    const increment = Math.ceil(finalCount / 100);
+    const increment = Math.ceil(finalCount / 50);
 
     const updateCount = () => {
       currentCount += increment;
@@ -43,44 +44,61 @@ export default function About() {
   };
 
   return (
-    <section className="counts-section">
+    <section id="counts" className="counts-section">
       <div className="right-section">
-        <img src="./counts.jpg" alt="About NASA Space Apps" />
+        <img src="./counts.jpeg" alt="About NASA Space Apps" />
       </div>
       <div className="left-section">
-        <h3 className="heading">Earth's Largest Local Event</h3>
-        <p>
-          NASA Space Apps '23, the Earth's largest local event, was successfully
-          hosted at Dayananda Sagar University in Harohalli, Bangalore,
-          showcasing innovative solutions for space apps challenges.
+        <h3 className="heading">About DSU</h3>
+        <p className="t-italic">
+          Dayananda Sagar University has ideally positioned itself in providing
+          value-based education, research and healthcare is now all set to take
+          forward its 6 decades legacy of providing world-class quality
+          education in its sprawling campus at Harohalli, Bengaluru.
         </p>
-        <div className="grid-container">
-          <div className="count-box">
-            <img className="box-icon" src="./happy.png" alt="Participants" />
-            <div className="flexbox">
-              <p className="number">57999</p>
-              <p>Participants</p>
+        <div className="counts-subsection">
+          <p className="left">
+            This main campus is thoughtfully planned on 130 acres, with a
+            picturesque site and a blossoming green environment, making it free
+            from city crowds and pollution. Being a completely selfcontained
+            campus at Harohalli, Kanakapura Road (35kms from Bengaluru city), it
+            is equipped with the entire modern state-of-the-art infrastructure,
+            creating a conducive environment for progressive experiential
+            learning and futuristic growth and transforming you into
+            next-generation innovators, explorers, leaders, and researchers.
+          </p>
+          <div className="flex-container">
+            <div className="count-box">
+              <img className="box-icon" src="./icons/happy.png" alt="Happy face icon" />
+              <div className="flexbox">
+                <p className="number">1800+</p>
+                <p>Students</p>
+              </div>
             </div>
-          </div>
-          <div className="count-box">
-            <img className="box-icon" src="./notes.png" alt="Boot Camps" />
-            <div className="flexbox">
-              <p className="number">8715</p>
-              <p>Teams</p>
+            <div className="count-box">
+              <img className="box-icon" src="./icons/notes.png" alt="Journal icon" />
+              <div className="flexbox">
+                <p className="stats">NAAC A+</p>
+                <p>approved</p>
+              </div>
             </div>
-          </div>
-          <div className="count-box">
-            <img className="box-icon" src="./clock.png" alt="Teams" />
-            <div className="flexbox">
-              <p className="number">402</p>
-              <p>Local Events</p>
+            <div className="count-box box-spl-1">
+              <img className="box-icon" src="./icons/village.png" alt="Village house icon" />
+              <div className="flexbox">
+                <p className="number">4</p>
+                <p>villages adopted over</p>
+              </div>
             </div>
-          </div>
-          <div className="count-box">
-            <img className="box-icon" src="./premium-badge.png" alt="Awards" />
-            <div className="flexbox">
-              <p className="number">5556</p>
-              <p>Projects Submitted</p>
+            <div className="count-box box-spl-2">
+              <img
+                className="box-icon"
+                src="./icons/premium-badge.png"
+                alt="premium badge icon"
+              />
+              <div className="flexbox">
+                <p className="stats">Sagar Hospitals</p>
+                <p>free treatment to the adopted villages</p>
+              </div>
             </div>
           </div>
         </div>

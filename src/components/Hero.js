@@ -4,17 +4,12 @@ import TypingAnim from './TypingAnim';
 function Hero() {
   return (
     <section id="home" className="hero-section">
-      <h1>Until next time,</h1>
+      <h1>At DSU,</h1>
       <div className='typing'>
-        <h1>forever</h1>
+        <h1>we are</h1>
         <TypingAnim words={["Inspiring", "Innovating", "Creating", "Empowering"]} />
       </div>
-      <h2>Earth's largest Local event NASASPACEAPPS '23</h2>
-      <div className='hero-links'>
-        <a className='t-orange' href="/">4218 participants</a>
-        <a className='t-orange' href="/">443 Teams</a>
-        <a className='t-orange' href="/">58 Bootcamps</a>
-      </div>
+      <h2>World's largest NASA Space Apps Local Event 2024</h2>
     </section>
   );
 }

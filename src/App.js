@@ -3,9 +3,8 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Counts from './components/Counts';
-import Winners from './components/Winners';
+import Organizers from './components/Organizers';
 import Contact from './components/Contact';
-import AutoplayCarousel from './components/AutoplayCarousel';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
 
@@ -16,10 +15,11 @@ const App = () => {
       <Hero />
       <div className='main'>
         <About />
-        <AutoplayCarousel />
+        <hr/>
         <Counts />
-        <AutoplayCarousel />
-        <Winners />
+        <hr/>
+        <Organizers />
+        <hr/>
         <Contact />
       </div>
       <Footer />

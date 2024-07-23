@@ -13,37 +13,35 @@ function Contact() {
 
   return (
     <section id="contact" className={`contact-section ${isVisible ? "fade-up" : ""}`}>
-      <h2 className="sub-title">CONTACT</h2>
       <h1 className="heading">CONTACT US</h1>
-
-      {/* Google Maps location */}
-
       <div className="row">
         <div className="left-section">
           <div className="container">
-            <img src="./pin.png" alt="map pin icon" />
+            <img src="./icons/pin-black.png" alt="map pin icon" />
             <div className="flexbox">
                 <h3>Location:</h3>
-                <p>Dayananda Sagar University, Harohalli</p>
+                <p className="t-orange"><strong>Dayananda Sagar University, Harohalli</strong></p>
             </div>
           </div>
           <div className="container">
-            <img src="./mail.png" alt="mail icon" />
+            <img src="./icons/mail.png" alt="mail icon" />
             <div className="flexbox">
-                <h3>Email:</h3>
-                <p>dsu-harohalli@gmail.com</p>
+                <h3>Email (Local Lead):</h3>
+                <p className="t-orange"><strong>rdlohith@gmail.com</strong></p>
             </div>
           </div>
         </div>
         <div className="right-section">
-          <form>
-            <div className="two-field">
-              <input type="text" placeholder="Your Name" />
-              <input type="email" placeholder="Your Email" />
-            </div>
-            <input className="subject" type="text" placeholder="Subject" />
-            <textarea placeholder="Message" rows="10" />
-          </form>
+          <img 
+            src="./icons/telegram.png" 
+            alt="telegram icon" 
+            onClick={() => {window.location.href="https://t.me/+qA5CpmKRdQVmMGY1"}} 
+          />
+          <img 
+            src="./icons/gmail.png" 
+            alt="email icon" 
+            onClick={() => {window.location.href="#footer"}} 
+          />
         </div>
       </div>
     </section>
