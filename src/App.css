@@ -1,3 +1,16 @@
+@font-face {
+  font-family: "Poppins";
+  src: local("Poppins"),
+    url(./fonts/Poppins/Poppins-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"),
+    url(./fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf)
+      format("truetype");
+}
+
 :root {
   --body-primary: linear-gradient(
     0.25turn,
@@ -15,15 +28,21 @@
 
   --primary-color: #ffc44e;
   --info-color: #444;
+  --primary-font: Poppins;
+  --secondary-font: Nunito;
 }
 
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Poppins, serif;
+  font-family: var(--secondary-font);
   overflow-x: hidden;
   background: var(--body-primary);
+}
+
+h1, h2 {
+  font-family: var(--primary-font) !important;
 }
 
 .t-orange,
@@ -216,7 +235,6 @@ h2.sub-title::after {
   color: white;
   text-decoration: none;
   font-size: 1rem;
-  font-weight: bold;
 }
 
 .navbar-link:hover {
@@ -311,7 +329,7 @@ h2.sub-title::after {
   white-space: pre;
   margin: 0 10px;
   color: var(--primary-color);
-  text-shadow: none;
+  text-shadow: 1px 0 0 var(--primary-color);
 }
 
 .typing-cursor {
@@ -322,7 +340,7 @@ h2.sub-title::after {
 
 /* ----------- ABOUT ------------*/
 .about-section {
-  font-family: Nunito, serif;
+  font-family: var(--secondary-font);
   color: #333;
   text-align: justify;
   width: 80%;

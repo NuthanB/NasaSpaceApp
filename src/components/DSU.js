@@ -55,7 +55,16 @@ export default function DSU() {
     <section id="counts" className="counts-section">
       <h2 className="sub-title">INFORMATION & STATISTICS</h2>
       <h1 className="heading">About DSU</h1>
-      
+      <p className="info-end">
+        This main campus is thoughtfully planned on 130 acres, with a
+        picturesque site and a blossoming green environment, making it free from
+        city crowds and pollution. Being a completely selfcontained campus at
+        Harohalli, Kanakapura Road (35kms from Bengaluru city), it is equipped
+        with the entire modern state-of-the-art infrastructure, creating a
+        conducive environment for progressive experiential learning and
+        futuristic growth and transforming you into next-generation innovators,
+        explorers, leaders, and researchers.
+      </p>
       <div className="flex-container">
         <div className="right-section">
           <img src={CountsBG} alt="About NASA Space Apps" />
@@ -129,16 +138,6 @@ export default function DSU() {
           </div>
         </div>
       </div>
-      <p className="info-end">
-        This main campus is thoughtfully planned on 130 acres, with a
-        picturesque site and a blossoming green environment, making it free from
-        city crowds and pollution. Being a completely selfcontained campus at
-        Harohalli, Kanakapura Road (35kms from Bengaluru city), it is equipped
-        with the entire modern state-of-the-art infrastructure, creating a
-        conducive environment for progressive experiential learning and
-        futuristic growth and transforming you into next-generation innovators,
-        explorers, leaders, and researchers.
-      </p>
     </section>
   );
 }
