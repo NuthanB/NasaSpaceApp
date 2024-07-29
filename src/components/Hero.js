@@ -9,7 +9,7 @@ function Hero() {
         <h1>we are</h1>
         <TypingAnim words={["Inspiring", "Innovating", "Creating", "Empowering"]} />
       </div>
-      <h2>World's largest NASA Space Apps Local Event 2024</h2>
+      <h2>Going to be... World's largest NASA Space Apps Local Event 2024</h2>
     </section>
   );
 }

@@ -2,11 +2,12 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Counts from './components/Counts';
+import DSU from './components/DSU';
 import Organizers from './components/Organizers';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import BackToTop from './components/BackToTop';
+import Registration from "./components/Registration";
 
 const App = () => {
   return (
@@ -15,11 +16,9 @@ const App = () => {
       <Hero />
       <div className='main'>
         <About />
-        <hr/>
-        <Counts />
-        <hr/>
+        <Registration />
+        <DSU />
         <Organizers />
-        <hr/>
         <Contact />
       </div>
       <Footer />

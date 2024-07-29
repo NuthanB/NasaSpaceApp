@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
+import NASALogo from "../assets/icons/logo-dark.png";
+import DSULogo from "../assets/icons/dsu.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,8 +58,16 @@ const Navbar = () => {
     <section className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src="./icons/logo-dark.png" alt="logo" />
-          <img src="./icons/dsu.png" alt="logo" />
+          <img
+            src={DSULogo}
+            alt="DSU logo"
+            onClick={() => scrollToSection("home")}
+          />
+          <img
+            src={NASALogo}
+            alt="NASA logo"
+            onClick={() => scrollToSection("home")}
+          />
         </div>
         <div className={`navbar-toggle ${isOpen ? "open" : ""}`}>
           <button onClick={toggleMenu} className="navbar-toggle-button">
@@ -97,24 +107,35 @@ const Navbar = () => {
         <ul className={`navbar-menu ${isOpen ? "open" : ""}`}>
           <li className="navbar-menu-item">
             <a
-              href="#home"
-              className={`navbar-link ${
-                activeLink === "home" ? "t-orange" : ""
-              }`}
-              onClick={() => scrollToSection("home")}
-            >
-              Home
-            </a>  
-          </li>
-          <li className="navbar-menu-item">
-            <a
               href="#about"
               className={`navbar-link ${
                 activeLink === "about" ? "t-orange" : ""
               }`}
               onClick={() => scrollToSection("about")}
             >
-              About
+              Introduction
+            </a>
+          </li>
+          <li className="navbar-menu-item">
+            <a
+              href="#register"
+              className={`navbar-link ${
+                activeLink === "register" ? "t-orange" : ""
+              }`}
+              onClick={() => scrollToSection("register")}
+            >
+              Registration
+            </a>
+          </li>
+          <li className="navbar-menu-item">
+            <a
+              href="#counts"
+              className={`navbar-link ${
+                activeLink === "counts" ? "t-orange" : ""
+              }`}
+              onClick={() => scrollToSection("organizers")}
+            >
+              DSU
             </a>
           </li>
           <li className="navbar-menu-item">
@@ -126,17 +147,6 @@ const Navbar = () => {
               onClick={() => scrollToSection("organizers")}
             >
               Organizers
-            </a>
-          </li>
-          <li className="navbar-menu-item">
-            <a
-              href="#foot"
-              className={`navbar-link ${
-                activeLink === "foot" ? "t-orange" : ""
-              }`}
-              onClick={() => scrollToSection("foot")}
-            >
-              Contact
             </a>
           </li>
         </ul>

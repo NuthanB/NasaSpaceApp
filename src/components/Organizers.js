@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
 
-function Winners() {
+import SupriyaMathew from "../assets/organizers/Ms-Supriya-Mathew.jpg";
+import LohithRD from "../assets/organizers/Mr-Lohith-RD.jpg";
+import SudhaDeepthi from "../assets/organizers/Ms-Sudha-Deepthi.jpg";
+import ShivammaD from "../assets/organizers/Ms-Shivamma-Devanna.jpg";
+
+function Organizers() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -21,14 +26,14 @@ function Winners() {
       <h1 className="heading">ORGANIZERS</h1>
       <div className="cards-container">
         <Card
-          img_path="./organizers/Ms-Supriya-Mathew.jpg"
+          img_path={SupriyaMathew}
           card_title="Ms. Supriya Mathew "
           card_body="Organiser, Nasa Space Apps- Harohalli. Vice
 President- International Affairs"
           card_tail=""
         />
         <Card
-          img_path="./organizers/Mr-Lohith-RD.jpg"
+          img_path={LohithRD}
           card_title="Mr. Lohith R D"
           card_body="Local Lead, Nasa Space Apps- Harohalli. Technical
 Lead, International Affairs at DSU"
@@ -36,7 +41,7 @@ Lead, International Affairs at DSU"
 nominee in 2022(Bangalore, India) and 2023(Cambridge, UK)"
         />
         <Card
-          img_path="./organizers/Ms-Sudha-Deepthi.jpg"
+          img_path={SudhaDeepthi}
           card_title="Ms. Sudha Deepthi"
           card_body="Co-Local Lead, Nasa Space Apps- Harohalli. Manager,
 Bosch Rexroth."
@@ -44,7 +49,7 @@ Bosch Rexroth."
 years"
         />
         <Card
-          img_path="./organizers/Ms-Shivamma-Devanna.jpg"
+          img_path={ShivammaD}
           card_title="Ms. Shivamma D"
           card_body="Co-Host, Nasa Space Apps- Harohalli. Professor - Data
 Science Department."
@@ -55,4 +60,4 @@ Science Department."
   );
 }
 
-export default Winners;
+export default Organizers;
