@@ -749,7 +749,7 @@ h2.sub-title::after {
 
 /* ----------- CONTACT --------------*/
 .contact-section {
-  background: url("./assets/imgs/CDSIMER\ 24.jpg") no-repeat top;
+  background: url("./assets/contact-bg.jpg") no-repeat top;
   background-size: cover;
   color: white;
   width: 80%;
