@@ -53,8 +53,8 @@ function Registration() {
         <div className="step">
           <h3>02</h3>
           <p>
-            Click on "Explore the Hackathon" in the top right corner, then
-            select "2024 Local Event" or{" "}
+            Click on "<span className="t-spcl">Explore the Hackathon</span>" in the top right corner, then
+            select "<span className="t-spcl">2024 Local Event</span>" or{" "}
             <span className="link">
               <img src={HyperlinkIcon} alt="Hyperlink icon" />
               <a href="https://www.spaceappschallenge.org/nasa-space-apps-2024/2024-local-events/harohalli">
@@ -67,8 +67,8 @@ function Registration() {
         <div className="step">
           <h3>03</h3>
           <p>
-            Search for "Harohalli" and click on "Choose this local event". Then
-            click on "Confirm registration".
+            Search for "<span className="t-spcl">Harohalli</span>" and click on "<span className="t-spcl">Choose this local event</span>". Then
+            click on "<span className="t-spcl">Confirm registration</span>".
           </p>
         </div>
       </div>

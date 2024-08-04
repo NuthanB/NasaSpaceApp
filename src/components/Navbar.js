@@ -3,43 +3,54 @@ import "../App.css";
 import NASALogo from "../assets/icons/logo-dark.png";
 import DSULogo from "../assets/icons/dsu.png";
 
-const Navbar = () => {
+export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("");
+  const [prevScrollPos, setPrevScrollPos] = useState(window.scrollY);
+  const [visible, setVisible] = useState(true);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleScroll = () => {
-    const offset = window.scrollY;
-    const navbarHeight = document.querySelector(".navbar").offsetHeight;
-
-    if (offset > 50) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-
-    const sections = document.querySelectorAll("section");
-    let currentSection = "";
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - navbarHeight;
-      const sectionHeight = section.clientHeight;
-      if (offset >= sectionTop && offset < sectionTop + sectionHeight) {
-        currentSection = section.getAttribute("id");
-      }
-    });
-    setActiveLink(currentSection);
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      const navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+      if (offset > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+
+      const currentScrollPos = window.scrollY;
+      if (prevScrollPos > currentScrollPos) {
+        setVisible(true);
+      } else {
+        if(isOpen) toggleMenu();
+        setVisible(false);
+      }
+      setPrevScrollPos(currentScrollPos);
+
+      const sections = document.querySelectorAll("section");
+      let currentSection = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - navbarHeight;
+        const sectionHeight = section.clientHeight;
+        if (offset >= sectionTop && offset < sectionTop + sectionHeight) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+      setActiveLink(currentSection);
+    };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [prevScrollPos, isOpen, toggleMenu]);
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -55,7 +66,11 @@ const Navbar = () => {
   };
 
   return (
-    <section className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+    <section
+      className={`navbar ${scrolled ? "navbar-scrolled" : ""} ${
+        visible ? "navbar-visible" : "navbar-hidden"
+      }`}
+    >
       <div className="navbar-container">
         <div className="navbar-logo">
           <img
@@ -108,9 +123,7 @@ const Navbar = () => {
           <li className="navbar-menu-item">
             <a
               href="#about"
-              className={`navbar-link ${
-                activeLink === "about" ? "t-orange" : ""
-              }`}
+              className={`navbar-link ${activeLink === "about" ? "t-sec" : ""}`}
               onClick={() => scrollToSection("about")}
             >
               Introduction
@@ -120,7 +133,7 @@ const Navbar = () => {
             <a
               href="#register"
               className={`navbar-link ${
-                activeLink === "register" ? "t-orange" : ""
+                activeLink === "register" ? "t-sec" : ""
               }`}
               onClick={() => scrollToSection("register")}
             >
@@ -131,9 +144,9 @@ const Navbar = () => {
             <a
               href="#counts"
               className={`navbar-link ${
-                activeLink === "counts" ? "t-orange" : ""
+                activeLink === "counts" ? "t-sec" : ""
               }`}
-              onClick={() => scrollToSection("organizers")}
+              onClick={() => scrollToSection("counts")}
             >
               DSU
             </a>
@@ -142,7 +155,7 @@ const Navbar = () => {
             <a
               href="#organizers"
               className={`navbar-link ${
-                activeLink === "organizers" ? "t-orange" : ""
+                activeLink === "organizers" ? "t-sec" : ""
               }`}
               onClick={() => scrollToSection("organizers")}
             >
@@ -153,6 +166,4 @@ const Navbar = () => {
       </div>
     </section>
   );
-};
-
-export default Navbar;
+}

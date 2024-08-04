@@ -24,13 +24,13 @@ function Footer() {
             href="https://maps.app.goo.gl/TooMk6KBsYGgSG7X7"
             className="footer-link location"
           >
-            DSU Main Campus - HAROHALLI
+            DSU Main Campus - <span className="t-sec">HAROHALLI</span>
           </a>
         </div>
         <p>
           Developed by{" "}
           <strong>
-            <span className="t-orange devs">
+            <span className="t-sec devs">
               <a href="https://www.linkedin.com/in/nuthanb/">Nuthan B</a>,
               <a href="https://www.linkedin.com/in/pavan-ks-bhat/">
                 {" "}
@@ -42,7 +42,7 @@ function Footer() {
         <p>
           Email:{" "}
           <strong>
-            <span className="t-orange">lohithrd@dsu.edu.in</span>
+            <span className="t-sec">lohithrd@dsu.edu.in</span>
           </strong>
         </p>
       </div>

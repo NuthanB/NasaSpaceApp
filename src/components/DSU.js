@@ -7,6 +7,8 @@ import VillageHouseIcon from "../assets/icons/village.png";
 import PremiumBadgeIcon from "../assets/icons/premium-badge.png";
 import RocketIcon from "../assets/icons/rocket.png";
 
+import Community from "./Community";
+
 export default function DSU() {
   useEffect(() => {
     const countSection = document.querySelector(".counts-section");
@@ -17,7 +19,7 @@ export default function DSU() {
           if (entry.isIntersecting) {
             const countBoxes = document.querySelectorAll(".count-box .number");
             countSection.classList.add("animate");
-            
+
             countBoxes.forEach((box) => {
               animateCount(box);
             });
@@ -56,14 +58,17 @@ export default function DSU() {
       <h2 className="sub-title">INFORMATION & STATISTICS</h2>
       <h1 className="heading">About DSU</h1>
       <p className="info-end">
-        This main campus is thoughtfully planned on 130 acres, with a
-        picturesque site and a blossoming green environment, making it free from
-        city crowds and pollution. Being a completely selfcontained campus at
-        Harohalli, Kanakapura Road (35kms from Bengaluru city), it is equipped
-        with the entire modern state-of-the-art infrastructure, creating a
-        conducive environment for progressive experiential learning and
-        futuristic growth and transforming you into next-generation innovators,
-        explorers, leaders, and researchers.
+        This main campus is thoughtfully planned on{" "}
+        <span className="t-spcl">130 acres</span>, with a picturesque site and a
+        blossoming green environment, making it free from city crowds and
+        pollution. Being a completely selfcontained campus at
+        <span className="t-spcl">
+          Harohalli, Kanakapura Road (35kms from Bengaluru city)
+        </span>
+        , it is equipped with the entire modern state-of-the-art infrastructure,
+        creating a conducive environment for progressive experiential learning
+        and futuristic growth and transforming you into next-generation
+        innovators, explorers, leaders, and researchers.
       </p>
       <div className="flex-container">
         <div className="right-section">
@@ -78,11 +83,7 @@ export default function DSU() {
           </p>
           <div className="counts-subsection">
             <div className="count-box">
-              <img
-                className="box-icon"
-                src={StudentIcon}
-                alt="Student icon"
-              />
+              <img className="box-icon" src={StudentIcon} alt="Student icon" />
               <div className="flex-container">
                 <p className="number">1800</p>
                 <p>Students on campus</p>
@@ -94,29 +95,21 @@ export default function DSU() {
                 src={PremiumBadgeIcon}
                 alt="premium badge icon"
               />
-              <div className="flex-container">
+              <div className="flex-container fldc">
                 <p className="stats">NAAC A+</p>
                 <p>Aggregated</p>
               </div>
             </div>
             <div className="count-box">
-              <img
-                className="box-icon"
-                src={LandIcon}
-                alt="Land icon"
-              />
+              <img className="box-icon" src={LandIcon} alt="Land icon" />
               <div className="flex-container">
                 <p className="number">130</p>
                 <p>acres of land, for the building</p>
               </div>
             </div>
             <div className="count-box">
-              <img
-                className="box-icon"
-                src={RocketIcon}
-                alt="Rokcet icon"
-              />
-              <div className="flex-container">
+              <img className="box-icon" src={RocketIcon} alt="Rokcet icon" />
+              <div className="flex-container fldc">
                 <p className="stats">Bosch & DERBI</p>
                 <p>foundations on campus</p>
               </div>
@@ -138,6 +131,8 @@ export default function DSU() {
           </div>
         </div>
       </div>
+      <h2 className="subsection-title">COMMUNITY AT A GLANCE</h2>
+      <Community />
     </section>
   );
 }
